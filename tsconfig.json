@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2016",
+    "sourceMap": true,
+    "allowJs": true,
+    "baseUrl": ".",
+    "rootDir": "./src",
+    "moduleResolution": "Node",
+    "outDir": "./build",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.js", "views/**/*.ejs"],
+  "exclude": ["node_modules"]
+}
