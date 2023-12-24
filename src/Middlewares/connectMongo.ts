@@ -2,9 +2,14 @@ import chalk from "chalk";
 import mongoose from "mongoose";
 
 export default () => {
+  const { CLOUD_MONGO_URI, LOCAL_MONGO_URI, NODE_ENV } = process.env;
   try {
     mongoose
-      .connect(String(process.env.MONGO_URI))
+      .connect(
+        NODE_ENV === "production"
+          ? String(CLOUD_MONGO_URI)
+          : String(LOCAL_MONGO_URI)
+      )
       .then(() => {
         console.log(chalk.green("Connected to mongodb..!"));
       })
